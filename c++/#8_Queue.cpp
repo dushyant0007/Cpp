@@ -118,7 +118,7 @@ int main()
         cout << "Enter 1 to Enqueue()" << endl;
         cout << "Enter 2 to Dequeue()" << endl;
         cout << "Enter 3 to isEmpty()" << endl;
-        cout << "Enter 5 to isFull()" << endl;
+        cout << "Enter 4 to isFull()" << endl;
         cout << "Enter 5 to display()" << endl;
 
         cin >> option;
@@ -142,7 +142,7 @@ int main()
         case 4:
             s1.isFull();
             break;
-        case 5;
+        case 5:
             s1.display();
             break;    
 
