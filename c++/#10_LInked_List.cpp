@@ -37,7 +37,7 @@ public:
     }
 
     // 1. CHeck if node exists using key value
-    Node *nodeExists(int k)
+    Node* nodeExists(int k)
     {
         Node *temp = NULL;
 
