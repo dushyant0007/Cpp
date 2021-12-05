@@ -74,20 +74,6 @@ int main()
     printLinkedList(head);
 
 
-    // // ---------Doubt---------//
-    // int a = 10;
-    // int &t = a;
-    // cout << "&t = " << &t << cout;
-    // int *aPtr = &a;
-    // cout << "a -> " << *aPtr << endl;
-    // cout << aPtr << endl;
-    // cout << &a << endl;
-
-    // Node temp;
-    // Node *k = &temp;
-    // cout << "Value Of k = " << k->data << endl;
-    // cout << "&temp.data = " << &temp.data << endl;
-    // cout << "*k->data =" << (*k).data << endl; // *k.data and *k->data Don't work
-
+   
     return 0;
 }
