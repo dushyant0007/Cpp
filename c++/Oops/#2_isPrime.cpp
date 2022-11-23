@@ -16,7 +16,7 @@ bool isPrime (int num){
 int main(){
 
   // finding prime numbers between 2 to 100
-    for (int i = 1; i <= 100; i++){
+    for (int i = 2; i <= 100; i++){
       if (i==1){ cout<<"1 is nither prime nor even "<<endl;}
       else if (isPrime(i)){
            cout<<i<<endl;

@@ -1,16 +1,25 @@
 #include <iostream>
 using namespace std;
+
+//                     class_A
+//      ↓-----------------|------------------↓
+//    class_B                             class_c        
+//      ↓                                    ↓
+//      |--------------class_D---------------|
+
+// Here we are making the class b and class c as virtual
+// so we only inherit the datamembers of class a only once
+
 class Student
 {
 protected:
     int roll_no;
-
 public:
-    void set_number(int a)
+    void set_roll_number(int a)
     {
         roll_no = a;
     }
-    void print_number(void)
+    void print_roll_number(void)
     {
         cout << "Your roll no is " << roll_no << endl;
     }
@@ -18,15 +27,13 @@ public:
 
 class Test : virtual public Student
 {
-
 protected:
     float maths, physics;
-
 public:
     void set_marks(float m1, float m2)
     {
         maths = m1;
-        maths = m2;
+        physics = m2;
     }
     void print_marks()
     {
@@ -38,10 +45,8 @@ public:
 
 class Sports : virtual public Student
 {
-
 protected:
     float score;
-
 public:
     void set_score(float sc)
     {
@@ -51,20 +56,19 @@ public:
     {
         cout << "Your PT score is " << score << endl;
     }
+    
 };
 
 class Result : public Test, public Sports
 {
-
 private:
     float total;
-
 public:
     void display()
     {
         total = maths + physics + score;
+        print_roll_number();
         print_marks();
-        print_number();
         print_score();
         cout << "Your total score is: " << total << endl;
     }
@@ -73,9 +77,8 @@ public:
 int main(){
 
     Result raja;
-    
+    raja.set_roll_number(12);
     raja.set_marks(78.9,56);
-    raja.set_number(69);
     raja.set_score(9);
     raja.display();
 

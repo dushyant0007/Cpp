@@ -8,10 +8,13 @@ int main()
   cin >> a;
   cin >> b;
   try
-  {
+  {    
     if (b == 0)
     {
-      throw b;
+  //     // Here only one throw statement is allowed
+  //     
+      string s = "This is Wrong ";
+      throw s;
     }
     else
     {
@@ -19,8 +22,12 @@ int main()
       cout << "The result is " << result << endl;
     }
   }
-  catch (float ex)
+  //Here only one arrgument is allowed
+  // Here ex represent the value of b (line no.14)
+
+  catch (string s)
   {
-    cout << "Division by Zero is not allowed" << endl;
+    cout<<s<<endl;
   }
-}
+
+};

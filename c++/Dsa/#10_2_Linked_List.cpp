@@ -6,7 +6,6 @@ class Node
     public:
     int data;
     Node* next;
-
 };
 
 void insertAfter(Node* insert, Node* insertAfter){

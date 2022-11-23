@@ -9,46 +9,46 @@ class Tow;
 class One
 {
 private:
-    int aInOne = 123;
-    // friend void Two :: printOneInTow(One x);
-    friend class Two;
-    
+    int aInOne;
+    // friend void Two :: printOneInTow(One &x);
+    friend class Two;  
 public:
-    int bInOne = 456;
-
-    void printInFirst()
+    int bInOne;
+    void printInOne()
     {
         cout << "printInOne" << endl;
-    }
-
-    
-    
+         cout << "aInOne = "<< aInOne << endl;
+          cout << "bInOne = "<< bInOne << endl;
+    } 
 };
 
 class Two
 {
-
 private:
-    int aInTwo = 444;
-
-
+    int aInTwo;
 public:
-    int bInTwo = 777;
-
+    int bInTwo;
     void printInTwo()
     {
         cout << "printInTow" << endl;
     }
-
-    void printOneInTow(One x){
+    void printOneInTow(One &x){
         x.bInOne = 9999;
-        x.printInFirst();
         x.aInOne = 5050; // This line giving error ?
+        x.printInOne();
     };
-    
 };
 
 
-int main()
-{
+int main(){
+
+ One a;
+
+ Two b;
+ b.printInTwo();
+ b.printOneInTow(a);
+
+ cout<<a.bInOne<<endl;;
+
+
 }

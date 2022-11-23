@@ -27,8 +27,4 @@ cout<<"---------------------"<<endl;
  cout<<addTow<int,float>(12,13.5)<<endl;
 
 
- 
-
-
-
 }

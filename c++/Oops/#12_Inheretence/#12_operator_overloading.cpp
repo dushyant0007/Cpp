@@ -26,7 +26,8 @@ public:
   A operator+(A t)
   {
     A *temp = new A;
-    (*temp).a = a + t.a;
+    // (*temp).a = a + t.a;
+    temp->a = a + t.a;
     (*temp).b = b + t.b;
     return *temp;
   }

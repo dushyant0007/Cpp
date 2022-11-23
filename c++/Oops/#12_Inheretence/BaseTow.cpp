@@ -57,15 +57,26 @@ public:
        cout<<"printMessage messages in class P"<<endl;
 
     }
+    void function(){
+        cout<<"In P class"<<endl;
+    }
 
 };
 
-class Total : public T , public P {
+class Total : public P , public T {
 
     public:
     // which print function to call when defined in all the classes
-    void printMessage(){
+    // SHOW ERROR if you dont define which one to call
+
+    string printMessage(){
         P::printMessage();
+        return "HHEELLOO";
+    }
+
+    // Override
+    void function(){
+        cout<<"fuction in total class"<<endl;
     }
     
 };
@@ -73,11 +84,13 @@ class Total : public T , public P {
 int main(){
 
     Total *obj = new Total();
-    obj->printMessage();
+    obj->function();
+    string x  = obj->printMessage();
     obj->setValuesP(1,2,3,4);
     obj->setValuesT(10,20,30,40);
     cout<<"obj->pSum() "<<obj->pSum()<<endl;
     cout<<"obj->tSum() "<<obj->tSum()<<endl;
+    
 
 
 }

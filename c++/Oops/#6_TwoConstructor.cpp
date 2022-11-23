@@ -8,7 +8,7 @@ class Person{
         int age;
         float hight;
 
-  public:
+    public:
         Person(){
             name = "Null";
             age = 0 ;
@@ -16,7 +16,7 @@ class Person{
         }  
 
         Person(int k){
-            cout<< "This is the value of k " << k << endl;
+            cout<< "This is the value of k -> " << k << endl;
         }
 
         Person(string nName, int aAge , float hHight){
@@ -24,21 +24,22 @@ class Person{
           name = nName;
           age = aAge;
           hight = hHight;
-          Person(2020);
+
+          Person(2020);//This is the first line execute when the constructor is going to call
           
         }  
 
         // we also have a defalt copy constructor
-     //  or we also can define ourselfs
-        Person (Person &addressOfObjectOfStudent){
+         //  or we also can define ourselfs
+        Person (Person &referenceOfObjectOfPerson){
                 cout<<"Copy constructure"<<endl;
-                name = addressOfObjectOfStudent.name;
-                age = addressOfObjectOfStudent.age;
-                hight = addressOfObjectOfStudent.hight;
+                name = referenceOfObjectOfPerson.name;
+                age = referenceOfObjectOfPerson.age;
+                hight = referenceOfObjectOfPerson.hight;
         }
 
-        // Just like constructor we have distructure
-        // get auto call when our object get distroid
+        // Just like constructor we have distructor
+        // get auto call when our object get destroyed
 
         ~Person(){
             cout<<"Distructor is called"<<endl;
@@ -50,21 +51,18 @@ class Person{
             cout<<"Hight = "<<hight<<endl;
         }
 
+    // overloading the == operator
     bool operator == (Person &a){
          if (name == a.name && age == a.age && hight==a.hight){
              return true;
-         }else return false;
-
-         
+         }else return false;       
      } 
-
         void anyFunction();
         
 };
 
-        void Person :: anyFunction(){
-            cout<<"Calling anyFunction, body of function is outSide the class "<<endl;
-
+    void Person :: anyFunction(){
+    cout<<"Calling anyFunction, body of function is outSide the class "<<endl;
 }
 
 
@@ -78,28 +76,25 @@ class Number{
 
 int main () {
     
-    Number arr[4] ;
-
-        for (int i = 0; i < 4; i++){        
-
-            cout<<"Name = "<<endl;
-            cin>>arr[i].name;
-            cout<<"Age = "<<endl;
-            cin>>arr[i].age;
-            cout<<"Hight = "<<endl;
-            cin>>arr[i].hight;
-            cout<<"------------------------------------"<<endl;
-        }
+    // Number arr[4] ;
+    
+    //     for (int i = 0; i < 4; i++){        
+    //         cout<<"Name = "<<endl;
+    //         cin>>arr[i].name;
+    //         cout<<"Age = "<<endl;
+    //         cin>>arr[i].age;
+    //         cout<<"Hight = "<<endl;
+    //         cin>>arr[i].hight;
+    //         cout<<"------------------------------------"<<endl;
+    //     }
         
-        for (int i = 0; i <4; i++){
-            cout<<"Name = "<<arr[i].name<<endl;
-            cout<<"Age = "<<arr[i].age<<endl;
-            cout<<"Hight = "<<arr[i].hight<<endl;
-            cout<<"------------------------------------"<<endl;
-        }
+    //     for (int i = 0; i <4; i++){
+    //         cout<<"Name = "<<arr[i].name<<endl;
+    //         cout<<"Age = "<<arr[i].age<<endl;
+    //         cout<<"Hight = "<<arr[i].hight<<endl;
+    //         cout<<"------------------------------------"<<endl;
+    //     }
         
-
-     
     Person t ;
     t.getData();
 
@@ -124,7 +119,7 @@ int main () {
     Person t4 (t1);
     cout<<"------------------------------------"<<endl;
 
-        // this is for the oprator overLoading
+        // this is for the operator overLoading
         if (t1==t2){
             cout<<"Same"<<endl;
         }

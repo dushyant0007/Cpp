@@ -17,18 +17,15 @@ public:
     int getB(){
         return b;
     }
-
 };
 
 class Sum : private Base
 {
-  
 public:
     void print(){
         set();
         cout<<getA()+getB()<<endl;
-    }
-    
+    }  
 };
 
 int main(){

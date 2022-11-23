@@ -6,11 +6,13 @@ class Stack
 {
 
     int top;
-    int arr[5];
+    int size;
+    int *arr;
 
 public:
-    Stack()
-    {
+    Stack(int sze)
+    {   size = sze;
+        arr = new int[sze];
         top = -1;
         for (int i = 0; i < 5; i++)
         {
@@ -32,7 +34,7 @@ public:
 
     bool isFull()
     {
-        if (top == 4)
+        if (top == size-1)
         {
             return true;
         }
@@ -90,7 +92,7 @@ public:
     //   change the value in the stack
     void change(int position, int value)
     {
-        if (position >= 5 || position < 0)
+        if (position >= size || position < 0)
         {
             cout << "There are only 4 position in the stack" << endl;
         }
@@ -103,11 +105,12 @@ public:
 
     void display()
     {
-        for (int i = 4; i >= 0; i--)
+        for (int i = 0; i <= top; i++)
         {   
-            cout<<arr[i]<<" "<<endl;
-            cout << "" << endl;
+            cout << " " << endl;
+            cout<<arr[i];
         }
+        cout<<"<--TOP"<<endl;
     }
 };
 
@@ -115,7 +118,7 @@ int main()
 {
     int option, position, value;
 
-    Stack s1;
+    Stack s1 = 10;
 
     do
     {

@@ -60,29 +60,49 @@ public:
         arr[rear] = value;
     }
 
-    int dequeue()
-    {
-        if (isEmpty())
-        {
-            cout << "Queue is Empty" << endl;
-            return -1;
-        }
-        else if (rear == 0 && front == 0)
-        {
-            int x = arr[front];
-            arr[front] = 0;
-            rear = -1;
-            front = -1;
-            return x;
-        }
-        else
-        {
-            int x = arr[front];
-            arr[front] = 0;
-            front++;
-        }
-        return -1;
+int deQueue() {
+    int element;
+    if (isEmpty()) {
+      cout << "Queue is empty" << endl;
+      return (-1);
+    } else {
+      element = arr[front];
+      if (front >= rear) {
+        front = -1;
+        rear = -1;
+      } /* Q has only one element, so we reset the queue after deleting it. */
+      else {
+        front++;
+      }
+      cout << endl
+         << "Deleted -> " << element << endl;
+      return (element);
     }
+  }
+
+    // int dequeue()
+    // {
+    //     if (isEmpty())
+    //     {
+    //         cout << "Queue is Empty" << endl;
+    //         return -1;
+    //     }
+    //     else if (rear == 0 && front == 0)
+    //     {
+    //         int x = arr[front];
+    //         arr[front] = 0;
+    //         rear = -1;
+    //         front = -1;
+    //         return x;
+    //     }
+    //     else
+    //     {
+    //         int x = arr[front];
+    //         arr[front] = 0;
+    //         front++;
+    //     }
+    //     return -1;
+    // }
 
     int count()
     {
@@ -134,7 +154,7 @@ int main()
             s1.inqueue(value);
             break;
         case 2:
-            s1.dequeue();
+            s1.deQueue();
             break;
         case 3:
             s1.isEmpty();

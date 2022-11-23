@@ -3,7 +3,6 @@ using namespace std;
 
 class One
 {
-
     private:
         int a = 20;
     protected:
@@ -21,6 +20,7 @@ class One
 void printObject(One x){
     cout<<"a = "<<x.a<<endl;
     cout<<"b = "<<x.b<<endl;
+    x.c = 101;
     cout<<"c = "<<x.c<<endl;
     x.print();
 }
@@ -28,6 +28,7 @@ void printObject(One x){
 void printObjectTypeTwo(One* x){
     cout<<"a = "<<x->a<<endl;
     cout<<"b = "<<x->b<<endl;
+    x->c = 202;
     cout<<"c = "<<x->c<<endl;
     x->print();
 }
@@ -37,21 +38,23 @@ int main(){
 
     One firstObject ;
     printObject(firstObject);
+    cout<<"ASDFasdf "<<firstObject.c<<endl;
     // cout<<firstObject.c<<endl;
-    cout<<"=========="<<endl;
-
-    One *secondObject = new One;
-    printObject(*secondObject);
-    
 
     cout<<"=========="<<endl;
 
-    printObjectTypeTwo(secondObject);
+    One secondObject ;
+    printObject(secondObject);
+    cout<<"ASDFasdf "<<firstObject.c<<endl;
+
+    cout<<"=========="<<endl;
+
+    printObjectTypeTwo(&secondObject);
+    cout<<"asdf "<< secondObject.c<<endl;
+
     cout<<"=========="<<endl;
 
 
-    (*secondObject).c = 1000000;
-
-    cout<<(secondObject)->c<<endl;
+   
 
 }

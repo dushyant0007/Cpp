@@ -70,7 +70,8 @@ public:
             cout << "Queue is Empty" << endl;
             return -1;
         }
-        else if (rear == 0 && front == 0)
+        // else if (rear == 0 && front == 0)
+        else if (front == rear)
         {
             int x = arr[front];
             arr[front] = 0;
