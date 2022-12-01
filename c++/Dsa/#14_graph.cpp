@@ -349,22 +349,22 @@ int main()
   int option, id1, id2, w;
   Vertex v1;
 
-  v1.setID(1);
-  v1.setStateName("DEL");
-  g.addVertex(v1);
+  // v1.setID(1);
+  // v1.setStateName("DEL");
+  // g.addVertex(v1);
 
-  v1.setID(2);
-  v1.setStateName("RAJ");
-  g.addVertex(v1);
+  // v1.setID(2);
+  // v1.setStateName("RAJ");
+  // g.addVertex(v1);
 
-  v1.setID(3);
-  v1.setStateName("PNJ");
-  g.addVertex(v1);
+  // v1.setID(3);
+  // v1.setStateName("PNJ");
+  // g.addVertex(v1);
 
-  g.addEdgeByID(1, 2, 200);
-  g.addEdgeByID(2, 3, 500);
-  g.addEdgeByID(2, 5, 500);
-  g.printGraph();
+  // g.addEdgeByID(1, 2, 200);
+  // g.addEdgeByID(2, 3, 500);
+  // g.addEdgeByID(2, 5, 500);
+  // g.printGraph();
 
   {
     cout << "\n\n----->\n"
